@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+    <style>
+        /* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f1111;
+    color: white;
+    padding: 10px 20px;
+    height: 80px;
+}
+
+.nav-logo img {
+    height: 60px;
+}
+
+/* Search Bar */
+.nav-search {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 50%;
+    max-width: 600px;
+}
+
+.search-select {
+    background-color: #f3f3f3;
+    border: none;
+    padding: 0 10px;
+    height: 40px;
+    outline: none;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.search-icon {
+    background-color: #ff9100;
+    color: black;
+    border: none;
+    height: 40px;
+    width: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login {
+    background-color: #2d89ff;
+    color: white;
+}
+
+.signup {
+    background-color: #4caf50;
+    color: white;
+}
+
+.cart {
+    background-color: #ff9100;
+    color: white;
+}
+
+.button:hover {
+    opacity: 0.9;
+}
+
+/* Subheader */
+.subheader {
+    background-color: #6a6969;
+    padding: 10px 0;
+    display: flex;
+    justify-content:flex-start;
+    gap: 70px;
+}
+
+.subheader-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.subheader-link:hover {
+    color: #ff9100;
+}
+
+.subheader-link::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ff9100;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.subheader-link:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+    }
+
+    .nav-search {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .nav-buttons {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .subheader {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo img {
+        height: 40px;
+    }
+
+    .nav-search {
+        width: 90%;
+    }
+
+    .search-input {
+        font-size: 14px;
+    }
+
+    .button {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .subheader-link {
+        font-size: 14px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- Logo Section -->
+        <div class="nav-logo">
+            <a href="#">
+                <img src="./images/logo1.png" alt="Logo" class="logo">
+            </a>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="nav-search">
+            <select class="search-select">
+                <option value="all">All</option>
+                <option value="books">Books</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="clothing">Groceries</option>
+                <option value="clothing">Fruits</option>
+                <option value="clothing">Vegetables</option>
+                <option value="clothing">Health</option>
+            </select>
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-icon">🔍</button>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <button class="button login">Login</button>
+            <button class="button signup">Signup</button>
+            <button class="button cart">🛒 Cart</button>
+        </div>
+    </nav>
+    <div class="subheader">
+        <a href="#" class="subheader-link">Home</a>
+        <a href="#" class="subheader-link">Shop</a>
+        <a href="#" class="subheader-link">Products</a>
+        <a href="#" class="subheader-link">About Us</a>
+        <a href="#" class="subheader-link">Customer Service</a>
+        <a href="#" class="subheader-link">Buy Central</a>
+        <a href="#" class="subheader-link">Help Center</a>
+        <a href="#" class="subheader-link">Get App</a>
+        <a href="#" class="subheader-link">Became a Supplier</a>
+        
+    </div>
+</body>
+</html>
